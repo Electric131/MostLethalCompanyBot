@@ -2,6 +2,8 @@ import discord from 'discord.js';
 import 'dotenv/config';
 import fs from 'fs';
 import { Command } from '../Types/Command';
+import config from "../../config.json";
+
 import path from 'path';
 
 const rest = new discord.REST({ version: "10" }).setToken(process.env.TOKEN as string);
@@ -68,5 +70,9 @@ export default class Client extends discord.Client {
         }
         
         this.login(process.env.TOKEN as string);
+    }
+
+    get config() {
+        return JSON.parse(JSON.stringify(config)); // bind config to a new object
     }
 }

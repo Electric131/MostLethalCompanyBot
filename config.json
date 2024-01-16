@@ -1,0 +1,18 @@
+{
+    "issue_id": "1180646039447941212",
+    "embed_format": {
+        "content": "Paging {supportMention} to assist with {ownerMention}'s problem...",
+        "embeds": [
+            {
+                "title": "Thank you for creating a support post!",
+                "description": "Someone will hopefully arrive to assist you with your problem shortly. In the meantime, make sure you have added the following information to your issue (if applicable):\n\n> • Ensure your problem hasn't already been covered in https://discord.com/channels/1180619962751144050/1183144975148527637 or another https://discord.com/channels/1180619962751144050/1180645679119470723 post.\n> • Described the nature of your problem accurately.\n> • Stated the version of the modpack you are playing on.\n> • Declared any modifications you've made to the pack, such as new additions or mods you have disabled/removed (you can provide a modlist if applicable).\n> • Provided a log for the session you encountered the issue in. Instructions on how to do this can be found [here](https://discord.com/channels/1180619962751144050/1183144975148527637/1191487176295317604).\n \nIf you have missed any of this information, feel free to add it now while waiting. Support members voluntarily help out, so don't expect an immediate response all of the time.",
+                "color": 15150381,
+                "thumbnail": {
+                    "url": "https://i.imgur.com/FBjYnud.png"
+                }
+            }
+        ],
+        "attachments": []
+    },
+    "support_role_id": "1196629077155659827"
+}
