@@ -1,0 +1,16 @@
+{
+	"name": "discordts-bottemplate",
+	"version": "1.0.0",
+	"description": "",
+	"main": "build/index.js",
+	"scripts": {
+		"start": "tsc && node ."
+	},
+	"author": "Electric131",
+	"license": "MIT",
+	"dependencies": {
+		"discord.js": "^14.14.1",
+		"dotenv": "^16.3.1",
+		"fs": "^0.0.1-security"
+	}
+}
