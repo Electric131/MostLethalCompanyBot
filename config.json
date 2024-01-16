@@ -14,5 +14,27 @@
         ],
         "attachments": []
     },
-    "support_role_id": "1196629077155659827"
+    "support_role_id": "1196629077155659827",
+    "custom_tags": {
+        "FAQ-general": "Can you like read https://discord.com/channels/1180619962751144050/1183144975148527637??",
+        "support": "Head over to https://discord.com/channels/1180619962751144050/1180645679119470723 and create a ticket to get help with your issue. Issues posted in other channels are typically ignored."
+    },
+    "tag_template": {
+        "content": "",
+        "embeds": [
+            {
+                "color": 15150381,
+                "author": {
+                    "name": "TheMostLethalCompany"
+                },
+                "description": "",
+                "footer": {
+                    "text": ""
+                },
+                "thumbnail": {
+                    "url": "https://i.imgur.com/FBjYnud.png"
+                }
+            }
+        ]
+    }
 }
