@@ -16,8 +16,15 @@
     },
     "support_role_id": "1196629077155659827",
     "custom_tags": {
-        "FAQ-general": "Can you like read https://discord.com/channels/1180619962751144050/1183144975148527637??",
-        "support": "Head over to https://discord.com/channels/1180619962751144050/1180645679119470723 and create a ticket to get help with your issue. Issues posted in other channels are typically ignored."
+        "faq": "Check out the https://discord.com/channels/1180619962751144050/1183144975148527637 to see common questions and answers the come through the server. If you’re unable to find your issue listed there, head over to https://discord.com/channels/1180619962751144050/1180645679119470723!",
+        "support": "Head over to https://discord.com/channels/1180619962751144050/1180645679119470723 and create a ticket to get help with your issue. Issues posted in other channels are typically ignored.",
+        "no-monsters": "If you’re not encountering enemies, make sure to follow all of the steps in this FAQ post: https://discord.com/channels/1180619962751144050/1183144975148527637/1192928687910297762",
+        "rollback": "Need to roll-back to an earlier version of Lethal Company? Check out this FAQ post: https://discord.com/channels/1180619962751144050/1183144975148527637/1192236694922076180",
+        "wiki": "View the official wiki for TheMostLethalCompany here: https://clarkuk.gitbook.io/themostlethalcompany-wiki/",
+        "installation": "Check out this video on how to properly install TheMostLethalCompany using R2ModManager: https://www.youtube.com/watch?v=v-FLBO_vJW8",
+        "mismatch": "If you receive an error while trying to connect to another user of the modpack, odds are you have a mismatched version with the host. Check out this FAQ post to better understand how to resolve this: https://discord.com/channels/1180619962751144050/1183144975148527637/1183256753828282368",
+        "moons": "If you are considering adding custom moons to TMLC, please refer to this FAQ post: https://discord.com/channels/1180619962751144050/1183144975148527637/1192947994148999268",
+        "suggestion": "If you have a suggestion for some content you’d like to see in the pack, head over to https://discord.com/channels/1180619962751144050/1188395063450017873. Please have a scroll/search before making a new post in there to make sure your suggestion doesn’t already exist."
     },
     "tag_template": {
         "content": "",
@@ -36,5 +43,7 @@
                 }
             }
         ]
-    }
+    },
+    "updates_channel": "1180642659073785856",
+    "updates_regex": "^# <:MLCLogo:1187667520870678570> __\\*\\* TheMostLethalCompany v\\d+.\\d+.\\d+:\\*\\*__"
 }

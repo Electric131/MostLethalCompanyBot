@@ -12,7 +12,7 @@ export default class Client extends discord.Client {
 
     constructor() {
         super({
-            intents: ['Guilds']
+            intents: ['Guilds', 'GuildMessages', 'MessageContent']
         });
 
         this.commands = new discord.Collection();

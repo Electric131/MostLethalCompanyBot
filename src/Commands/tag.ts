@@ -32,17 +32,24 @@ interface Tags {
 export const command: Command = {
 	command: builder,
 	execute: async (client, interaction) => {
-        await interaction.deferReply({ ephemeral: true });
+        console.log(`Tag requested, deferring reply`);
+        await interaction.deferReply({ ephemeral: true }); // Send "Thinking..." message
+		const reply = await interaction.fetchReply(); // Get that reply
+        console.log(`Tag response ping is ${reply.createdTimestamp - interaction.createdTimestamp}ms`);
         if (interaction.options.data[0].value && typeof interaction.options.data[0].value == "string" && Object.keys(config().custom_tags).includes(interaction.options.data[0].value)) {
+            console.log(`Valid tag provided`);
             var response = config().tag_template;
             if (interaction.options.data[1] && interaction.options.data[1].value) {
                 response.content = `<@${interaction.options.data[1].value}>`;
             }
             response.embeds[0].footer.text = `Response requested by ${interaction.user.displayName}`;
             response.embeds[0].description = (config().custom_tags as Tags)[interaction.options.data[0].value];
+            console.log(`Sending tag message: ${response.embeds[0].description}`);
             await interaction.channel?.send(response);
             await interaction.editReply({ content: `Tag completed.` });
+            console.log(`Tag marked as completed`);
         } else {
+            console.log(`Tag was invalid`);
             await interaction.editReply({ content: "Failed to find tag content." });
         }
 	}
