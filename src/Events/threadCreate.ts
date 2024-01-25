@@ -10,7 +10,9 @@ export const event: Event = {
             var embed = config().embed_format;
             embed.content = embed.content.replace("{supportMention}", `<@&${config().support_role_id}>`);
             embed.content = embed.content.replace("{ownerMention}", `<@${thread.ownerId}>`);
+            console.log("Thread created");
             await waitForFirst(thread);
+            console.log("Sending thread message..");
             await thread.send(embed);
         }
     }

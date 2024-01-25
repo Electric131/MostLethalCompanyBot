@@ -3,8 +3,12 @@ console.clear();
 
 const client = new Client();
 
-process.on('unhandledRejection', error => {
-    console.error('Unhandled promise rejection:', error);
+process.on('unhandledRejection', async (reason, promise) => {
+    console.log(`Unhandled rejection at: ${promise} ; Reason: ${reason}`);
+});
+
+process.on('unhandledException', (err) => {
+    console.log(`Unhandled exception: ${err}`);
 });
 
 client.start();
