@@ -13,6 +13,7 @@ jobs:
       run: |
         mkdir ../build
         cp -TR . ../build
+        tar -cvf deploy.tar ../build/
 
     - name: Deploy via SCP (SSH connection)
       uses: appleboy/scp-action@master
@@ -20,5 +21,16 @@ jobs:
         host: ${{ secrets.HOST }}
         username: ${{ secrets.USERNAME }}
         key: ${{ secrets.KEY }}
-        source: "../build"
-        target: "src"
+        source: "deploy.tar"
+        target: "."
+
+    - name: Unzip tar on server
+      uses: appleboy/ssh-action@v1.0.3
+      with:
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.USERNAME }}
+        key: ${{ secrets.KEY }}
+        script: |
+          rm build -r
+          tar -xf deploy.tar
+          rm deploy.tar
