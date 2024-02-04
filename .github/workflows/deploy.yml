@@ -34,3 +34,4 @@ jobs:
           rm build -r
           tar -xf deploy.tar
           rm deploy.tar
+          npm i -p ./build
