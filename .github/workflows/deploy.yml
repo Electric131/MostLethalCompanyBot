@@ -24,7 +24,7 @@ jobs:
         source: "deploy.tar"
         target: "."
 
-    - name: Unzip tar on server
+    - name: SSH into server and finish deployment
       uses: appleboy/ssh-action@v1.0.3
       with:
         host: ${{ secrets.HOST }}
