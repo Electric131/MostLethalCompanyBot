@@ -30,10 +30,4 @@ jobs:
         host: ${{ secrets.HOST }}
         username: ${{ secrets.USERNAME }}
         key: ${{ secrets.KEY }}
-        script: |
-          rm build -r
-          tar -xf deploy.tar
-          rm deploy.tar
-          npm i --prefix ./build
-          cp .env build
-          npm run build --prefix build
+        script: build.sh
