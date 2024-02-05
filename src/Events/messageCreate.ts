@@ -1,4 +1,4 @@
-import { Message } from "discord.js";
+import { ForumChannel, Message, ThreadChannel } from "discord.js";
 import { Event } from "../Types/Event";
 import { config } from "../config";
 
@@ -12,10 +12,13 @@ export const event: Event = {
             }
         }
         // Message was posted in a thread, and thread is the support thread, and message was sent by OP
-        console.log(message.thread?.id);
-        console.log(config().support_thread_id);
-        console.log(message.thread?.ownerId);
-        console.log(message.author.id);
+        if (message.channel.isThread()) {
+            console.log(message.channel.ownerId);
+            console.log(message.channel.id);
+            console.log(config().support_thread_id);
+            console.log(message.channel.ownerId);
+            console.log(message.author.id);
+        }
         if (message.thread && message.thread.id == config().support_thread_id && message.thread.ownerId == message.author.id) {
             console.log(message.content);
             // Message contains either ("pirated" or "cracked") AND contains either ("game" or "version")
