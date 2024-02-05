@@ -1,6 +1,7 @@
-import { ForumChannel, Message, ThreadChannel } from "discord.js";
+import { Message } from "discord.js";
 import { Event } from "../Types/Event";
 import { config } from "../config";
+import { waitForFirst } from "../Util/threadHelper";
 
 export const event: Event = {
     name: "messageCreate",
@@ -15,6 +16,7 @@ export const event: Event = {
         if (message.channel.isThread() && message.channel.parentId == config().support_thread_id && message.channel.ownerId == message.author.id) {
             // Message contains either ("pirated" or "cracked") AND contains any of ("game" or "version" or "copy")
             if ((message.content.includes("pirated") || message.content.includes("cracked")) && (message.content.includes("game") || message.content.includes("version") || message.content.includes("copy"))) {
+                await waitForFirst(message.channel); // Make sure thread does exist (mainly for first message)
                 var response = config().tag_template;
                 response.content = `<@${message.author.id}>`;
                 response.embeds[0].footer.text = `(Automated Response)`;
