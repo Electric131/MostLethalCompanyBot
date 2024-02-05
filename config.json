@@ -1,5 +1,6 @@
 {
     "issue_id": "1180646039447941212",
+    "support_thread_id": "1180645679119470723",
     "embed_format": {
         "content": "Paging {supportMention} to assist with {ownerMention}'s problem...",
         "embeds": [
@@ -24,7 +25,8 @@
         "installation": "Check out this video on how to properly install TheMostLethalCompany using R2ModManager: https://www.youtube.com/watch?v=v-FLBO_vJW8",
         "mismatch": "If you receive an error while trying to connect to another user of the modpack, odds are you have a mismatched version with the host. Check out this FAQ post to better understand how to resolve this: https://discord.com/channels/1180619962751144050/1183144975148527637/1183256753828282368",
         "moons": "If you are considering adding custom moons to TMLC, please refer to this FAQ post: https://discord.com/channels/1180619962751144050/1183144975148527637/1192947994148999268",
-        "suggestion": "If you have a suggestion for some content you’d like to see in the pack, head over to https://discord.com/channels/1180619962751144050/1188395063450017873. Please have a scroll/search before making a new post in there to make sure your suggestion doesn’t already exist."
+        "suggestion": "If you have a suggestion for some content you’d like to see in the pack, head over to https://discord.com/channels/1180619962751144050/1188395063450017873. Please have a scroll/search before making a new post in there to make sure your suggestion doesn’t already exist.",
+        "pirated": "Sorry, but (as per rule 5) we will not provide support for pirated (aka. cracked) versions of the game."
     },
     "tag_template": {
         "content": "",
