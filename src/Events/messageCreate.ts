@@ -4,7 +4,7 @@ import { config } from "../config";
 
 export const event: Event = {
     name: "messageCreate",
-    callback: (client, message: Message) => {
+    callback: async (client, message: Message) => {
         if (message.channel.id == config().updates_channel) {
             if (message.crosspostable && message.content.match(config().updates_regex)) {
                 message.crosspost();
@@ -13,10 +13,14 @@ export const event: Event = {
         }
         // Message was posted in a thread, and thread is the support thread, and message was sent by OP
         if (message.channel.isThread() && message.channel.parentId == config().support_thread_id && message.channel.ownerId == message.author.id) {
-            console.log(message.content);
-            // Message contains either ("pirated" or "cracked") AND contains either ("game" or "version")
-            if ((message.content.includes("pirated") || message.content.includes("cracked")) && (message.content.includes("game") || message.content.includes("version"))) {
-                console.log("flagged");
+            // Message contains either ("pirated" or "cracked") AND contains any of ("game" or "version" or "copy")
+            if ((message.content.includes("pirated") || message.content.includes("cracked")) && (message.content.includes("game") || message.content.includes("version") || message.content.includes("copy"))) {
+                var response = config().tag_template;
+                response.content = `<@${message.author.id}>`;
+                response.embeds[0].footer.text = `(Automated Response)`;
+                response.embeds[0].description = config().custom_tags.pirated;
+                console.log(`Sending tag message: ${response.embeds[0].description}`);
+                await message.channel?.send(response);
             }
         }
     }
