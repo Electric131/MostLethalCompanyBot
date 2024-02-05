@@ -12,14 +12,7 @@ export const event: Event = {
             }
         }
         // Message was posted in a thread, and thread is the support thread, and message was sent by OP
-        if (message.channel.isThread()) {
-            console.log(message.channel.ownerId);
-            console.log(message.channel.id);
-            console.log(config().support_thread_id);
-            console.log(message.channel.ownerId);
-            console.log(message.author.id);
-        }
-        if (message.thread && message.thread.id == config().support_thread_id && message.thread.ownerId == message.author.id) {
+        if (message.channel.isThread() && message.channel.parentId == config().support_thread_id && message.channel.ownerId == message.author.id) {
             console.log(message.content);
             // Message contains either ("pirated" or "cracked") AND contains either ("game" or "version")
             if ((message.content.includes("pirated") || message.content.includes("cracked")) && (message.content.includes("game") || message.content.includes("version"))) {
