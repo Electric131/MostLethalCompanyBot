@@ -1,6 +1,7 @@
 name: Build source to server
 on:
   push
+
 jobs:
   build:
     name: Build

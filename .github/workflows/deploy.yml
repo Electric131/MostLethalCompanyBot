@@ -4,12 +4,13 @@ on:
   schedule:
     # Re-deploy every 12 hours on the 30th minute
     - cron: "30 */12 * * *"
-  
+
 jobs:
   deploy:
     name: Deploy
     runs-on: ubuntu-latest
 
+    steps:
     - name: SSH into server and run deployment (Serverside)
       uses: appleboy/ssh-action@v1.0.3
       with:
