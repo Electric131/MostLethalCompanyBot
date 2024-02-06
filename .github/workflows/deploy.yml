@@ -6,7 +6,7 @@ on:
     - cron: "30 */12 * * *"
   
 jobs:
-  build:
+  deploy:
     name: Deploy
     runs-on: ubuntu-latest
 
