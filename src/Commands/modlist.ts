@@ -2,23 +2,25 @@ import { Command } from "../Types/Command";
 import { CommandInteractionOptionResolver, GuildMemberRoleManager, SlashCommandBuilder } from 'discord.js';
 import { config } from "../config";
 
+const builder = new SlashCommandBuilder();
+builder.setName("modlist")
+.setDescription("Get the list of mods currently in the pack.")
+.addSubcommand(builder => {
+    return builder
+    .setName("set") // Subcommand is in the format of `/modlist set <list>`
+    .setDescription("Set the list of mods. (Moderator Only)")
+    .addStringOption(option => {
+        return option.setRequired(true);
+    });
+})
+.addSubcommand(builder => {
+    return builder
+    .setName("get") // Subcommand is in the format of `/modlist get`
+    .setDescription("View the list of mods.");
+});
+
 export const command: Command = {
-	command: new SlashCommandBuilder()
-	.setName("modlist")
-	.setDescription("Get the list of mods currently in the pack.")
-    .addSubcommand(builder => {
-        return builder
-        .setName("set") // Subcommand is in the format of `/modlist set <list>`
-        .setDescription("Set the list of mods. (Moderator Only)")
-        .addStringOption(option => {
-            return option.setRequired(true);
-        });
-    })
-    .addSubcommand(builder => {
-        return builder
-        .setName("get") // Subcommand is in the format of `/modlist get`
-        .setDescription("View the list of mods.");
-    })as SlashCommandBuilder,
+	command: builder,
 	execute: async (client, interaction) => {
 		console.log(`Modlist requested, deferring reply`);
         await interaction.deferReply({ ephemeral: true }); // Send "Thinking..." message
