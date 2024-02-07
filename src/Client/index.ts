@@ -47,8 +47,8 @@ export default class Client extends discord.Client {
             }
 
             console.log(`All slash commands sent to discord and reloaded\n`);
-        } catch (error) {
-            console.error(`Unexpected exception caught when loading commands: ${error}`);
+        } catch (error: any) {
+            console.error(`Unexpected exception caught when loading commands: ${error.stack}`);
         }
 
         try {
@@ -64,8 +64,8 @@ export default class Client extends discord.Client {
             }
 
             console.log(`\nAll (${eventCount}) events loaded and bound successfully\n`);
-        } catch (error) {
-            console.error(`Unexpected exception caught when loading events: ${error}`);
+        } catch (error: any) {
+            console.error(`Unexpected exception caught when loading events: ${error.stack}`);
         }
         
         this.login(process.env.TOKEN as string);

@@ -5,14 +5,17 @@ import { config } from "../config";
 const builder = new SlashCommandBuilder();
 builder.setName("modlist")
 .setDescription("Get the list of mods currently in the pack.")
-.addSubcommand(builder => {
-    return builder
+.addSubcommand(builder =>
+    builder
     .setName("set") // Subcommand is in the format of `/modlist set <list>`
     .setDescription("Set the list of mods. (Moderator Only)")
-    .addStringOption(option => {
-        return option.setRequired(true);
-    });
-})
+    .addStringOption(option => option.setName('target').setDescription('The user'))
+    .addStringOption(option =>
+        option.setName("dependency-string")
+        .setDescription("Dependency string of the modpack (Maybe with a few trims, i.e. apis/libraries)")
+        .setRequired(true)
+    )
+)
 .addSubcommand(builder => {
     return builder
     .setName("get") // Subcommand is in the format of `/modlist get`
