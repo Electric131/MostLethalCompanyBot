@@ -1,6 +1,6 @@
 import { Message } from "discord.js";
 import { Event } from "../Types/Event";
-import { config } from "../config";
+import { config } from "../Util/data";
 import { waitForFirst } from "../Util/threadHelper";
 
 export const event: Event = {

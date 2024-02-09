@@ -1,8 +1,12 @@
 import Client from '../Client';
-import { CommandInteraction, SlashCommandBuilder } from 'discord.js';
+import { CommandInteraction, CommandInteractionOptionResolver, SlashCommandBuilder } from 'discord.js';
 
 interface Execute {
-    (client: Client, interaction: CommandInteraction): void
+    (client: Client, interaction: CommandInteractionExtension): void
+}
+
+export interface CommandInteractionExtension extends CommandInteraction {
+    options: CommandInteractionOptionResolver
 }
 
 export interface Command {

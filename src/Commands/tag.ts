@@ -1,6 +1,6 @@
 import { Command } from "../Types/Command";
 import { SlashCommandBuilder } from 'discord.js';
-import { config } from "../config";
+import { config } from "../Util/data";
 
 var choices = Object.keys(config().custom_tags).map(val => {
     return { name: val, value: val }
@@ -36,14 +36,19 @@ export const command: Command = {
         await interaction.deferReply({ ephemeral: true }); // Send "Thinking..." message
 		const reply = await interaction.fetchReply(); // Get that reply
         console.log(`Tag response ping is ${reply.createdTimestamp - interaction.createdTimestamp}ms`);
-        if (interaction.options.data[0].value && typeof interaction.options.data[0].value == "string" && Object.keys(config().custom_tags).includes(interaction.options.data[0].value)) {
+
+        let tagName = interaction.options.getString("name");
+        // Ensure tag was provided, and that it is a valid tag
+        if (tagName && Object.keys(config().custom_tags).includes(tagName)) {
             console.log(`Valid tag provided`);
             var response = config().tag_template;
-            if (interaction.options.data[1] && interaction.options.data[1].value) {
-                response.content = `<@${interaction.options.data[1].value}>`;
+            // Check if a target was provided
+            let target = interaction.options.getUser("target");
+            if (target) {
+                response.content = `<@${target.id}>`;
             }
             response.embeds[0].footer.text = `Response requested by ${interaction.user.displayName}`;
-            response.embeds[0].description = (config().custom_tags as Tags)[interaction.options.data[0].value];
+            response.embeds[0].description = (config().custom_tags as Tags)[tagName];
             console.log(`Sending tag message: ${response.embeds[0].description}`);
             await interaction.channel?.send(response);
             await interaction.editReply({ content: `Tag completed.` });

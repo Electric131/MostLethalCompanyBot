@@ -1,7 +1,7 @@
 {
     "issue_id": "1180646039447941212",
     "support_thread_id": "1180645679119470723",
-    "embed_format": {
+    "support_embed": {
         "content": "Paging {supportMention} to assist with {ownerMention}'s problem...",
         "embeds": [
             {
@@ -12,8 +12,7 @@
                     "url": "https://i.imgur.com/FBjYnud.png"
                 }
             }
-        ],
-        "attachments": []
+        ]
     },
     "roles": {
         "support": "1196629077155659827",
@@ -51,5 +50,13 @@
         ]
     },
     "updates_channel": "1180642659073785856",
-    "updates_regex": "^# <:MLCLogo:1187667520870678570> __\\*\\* TheMostLethalCompany v\\d+.\\d+.\\d+:\\*\\*__"
+    "updates_regex": "^# <:MLCLogo:1187667520870678570> __\\*\\* TheMostLethalCompany v\\d+.\\d+.\\d+:\\*\\*__",
+    "modlist_embed": {
+        "embeds": [
+            {
+                "title": "Current Modlist",
+                "color": 15150381
+            }
+        ] 
+    }
 }
