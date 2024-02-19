@@ -13,7 +13,8 @@ interface DataFormat {
 }
 
 var volatileData: DataFormat = {};
-const volatilePath = path.dirname(__filename).replace(/\\build.+/g, "") + "\\volatile.json";
+const volatilePath = path.dirname(__filename).replace(/[\\/]build[\\/]Util.+/g, "") + "\\volatile.json";
+console.log(`Volatile data path: ${volatilePath}`);
 var hasRead = false;
 
 // From volatile.json

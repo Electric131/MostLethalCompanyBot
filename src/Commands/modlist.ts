@@ -121,8 +121,8 @@ export function generatePage(pageNum: number = 1) {
 
     let message = config().modlist_embed as any; // Use any to add parameters that do not exist
     message.components = [ row ];
-    message.embeds[0].title = `Current Modlist (${entries.length} mods)`
-    message.embeds[0].footer = { text: `Page ${pageNum}/${pages.length}` }
+    message.embeds[0].title = `Current Modlist (${entries.length} mods)`;
+    message.embeds[0].footer = { text: `Page ${pageNum}/${pages.length}` };
     message.embeds[0].description = pages[pageNum - 1].join("\n");
     return message;
 }
