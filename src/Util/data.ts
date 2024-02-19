@@ -13,7 +13,8 @@ interface DataFormat {
 }
 
 var volatileData: DataFormat = {};
-const volatilePath = path.dirname(__filename).replace(/[\\/]build[\\/]Util.+/g, "") + "\\volatile.json";
+// Match raw filename, and use / or \ based on OS
+const volatilePath = __filename.replace(/[\\/]build[\\/]Util.+/g, "") + `${__filename.includes("/") ? "/" : "\\"}volatile.json`;
 console.log(`Volatile data path: ${volatilePath}`);
 var hasRead = false;
 
