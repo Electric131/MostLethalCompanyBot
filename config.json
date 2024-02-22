@@ -29,7 +29,8 @@
         "moons": "If you are considering adding custom moons to TMLC, please refer to this FAQ post: https://discord.com/channels/1180619962751144050/1183144975148527637/1192947994148999268",
         "suggestion": "If you have a suggestion for some content you’d like to see in the pack, head over to https://discord.com/channels/1180619962751144050/1188395063450017873. Please have a scroll/search before making a new post in there to make sure your suggestion doesn’t already exist.",
         "pirated": "Sorry, but (as per rule 5) we will not provide support for pirated (aka. cracked) versions of the game.",
-        "never-update": "It is **HEAVILY** advised you do not press 'Update All' in the mod manager. If you press 'Update All' it could cause **MAJOR** incompatibilities with some mods, and could completely break your game."
+        "never-update": "It is **HEAVILY** advised you do not press 'Update All' in the mod manager. If you press 'Update All' it could cause **MAJOR** incompatibilities with some mods, and could completely break your game.",
+        "network-error": "If you're running into \"Network Error\" messages when downloading mods from Thunderstore, and retrying doesn't help, the issue will often be with the Thunderstore site itself. A workaround is to use a free VPN such as ProtonVPN to facilitate the download. After the mods have been installed, you can keep the VPN disabled permanently."
     },
     "tag_template": {
         "content": "",
