@@ -59,5 +59,55 @@
                 "color": 15150381
             }
         ] 
+    },
+    "whitelisted_urls": {
+        "thunderstore": {
+            "3": "thunderstore",
+            "4": "io"
+        },
+        "twitch": {
+            "3": "twitch",
+            "4": "tv"
+        },
+        "medal": {
+            "3": "medal",
+            "4": "tv"
+        },
+        "discord-general": {
+            "3": "discord",
+            "4": "com"
+        },
+        "youtube": {
+            "3": "youtube",
+            "4": "com"
+        },
+        "github": {
+            "3": "github",
+            "4": "com"
+        },
+        "wiki": {
+            "3": "clarkuk.gitbook",
+            "4": "io"
+        },
+        "discord": {
+            "3": "discord",
+            "4": "gg",
+            "5": "/themostlethalcompany"
+        },
+        "paypal": {
+            "3": "paypal",
+            "4": "com",
+            "5": "/donate/?hosted_button_id=AAEGTBLWAWW3S"
+        },
+        "trello": {
+            "3": "trello",
+            "4": "com",
+            "5": "/b/C01TBe4O/themostlethalcompany"
+        },
+        "linktree": {
+            "3": "linktr",
+            "4": "ee",
+            "5": "/clarkuk"
+        }
     }
 }
