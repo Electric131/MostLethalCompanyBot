@@ -89,6 +89,12 @@
             "3": "youtube",
             "4": "com"
         },
+        "cfg-file": {
+            "4": "cfg"
+        },
+        "zip-file": {
+            "4": "zip"
+        },
         "github": {
             "3": "github",
             "4": "com"
