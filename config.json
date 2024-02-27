@@ -89,6 +89,11 @@
             "3": "youtube",
             "4": "com"
         },
+        "cdn-discord": {
+            "2": "cdn",
+            "3": "discordapp",
+            "4": "com"
+        },
         "cfg-file": {
             "4": "cfg"
         },
