@@ -90,8 +90,7 @@
             "4": "com"
         },
         "cdn-discord": {
-            "2": "cdn",
-            "3": "discordapp",
+            "3": "cdn.discordapp",
             "4": "com"
         },
         "cfg-file": {
