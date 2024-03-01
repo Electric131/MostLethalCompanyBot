@@ -127,5 +127,15 @@
             "4": "ee",
             "5": "/clarkuk"
         }
-    }
+    },
+    "whitelist_fail_embed": {
+        "embeds": [
+            {
+                "title": "Message Deleted - URL is not in whitelist",
+                "description": "Caught URLs:\n\n",
+                "color": 16711680
+            }
+        ]
+    },
+    "log_channel": "1180651079873085621"
 }
