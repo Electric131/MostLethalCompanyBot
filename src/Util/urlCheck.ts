@@ -2,7 +2,7 @@ import { Message, TextChannel } from "discord.js";
 import { config } from "./data";
 
 // Regex string to match parts of a url, used to verify if the url is valid
-const urlRegex = /(?:(https?):\/\/)?(?:(www)\.)?([-a-zA-Z0-9@:%._\+~#=]{2,256})\.([a-z]{2,6})\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/g
+const urlRegex = /(?:(https?):\/\/)?(?:(www)\.)?((?:[-a-zA-Z0-9]|(?<!\.)\.){2,255})(?<!\.)\.([a-z]{2,6})\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/g
 
 // False if URL check failed
 export async function handleMessage(message: Message): Promise<boolean> {
