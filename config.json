@@ -89,6 +89,18 @@
             "3": "youtube",
             "4": "com"
         },
+        "youtu.be": {
+            "3": "youtu",
+            "4": "be"
+        },
+        "google": {
+            "3": "google",
+            "4": "com"
+        },
+        "media-discord": {
+            "3": "media.discordapp",
+            "4": "com"
+        },
         "cdn-discord": {
             "3": "cdn.discordapp",
             "4": "com"
