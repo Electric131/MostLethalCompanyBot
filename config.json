@@ -111,6 +111,9 @@
         "zip-file": {
             "4": "zip"
         },
+        "md-file": {
+            "4": "md"
+        },
         "github": {
             "3": "github",
             "4": "com"
