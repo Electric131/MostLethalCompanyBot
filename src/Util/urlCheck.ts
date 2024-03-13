@@ -1,5 +1,16 @@
-import { Message, TextChannel } from "discord.js";
+import { GuildMember, Message, TextChannel, time } from "discord.js";
 import { config } from "./data";
+
+// Auto ban will ban users who have sent 3 disallowed urls in the past 15 minutes
+// Dictionary of users for extra knowledge on when ban conditions are met
+let timeouts: Timeout = {}
+
+interface Timeout {
+    [id: string]: {
+        count: number
+        time: number
+    }
+}
 
 // Regex string to match parts of a url, used to verify if the url is valid
 const urlRegex = /(?:(https?):\/\/)?(?:(www)\.)?((?:[-a-zA-Z0-9]|(?<!\.)\.){2,255})(?<!\.)\.([a-z]{2,6})\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/g
@@ -24,6 +35,25 @@ export async function handleMessage(message: Message): Promise<boolean> {
     if (!validMessage) {
         await message.delete();
         console.log(`Message sent by ${message.author.username} (${message.author.id}) was deleted for urls. (${prettyFailed.join(", ")})`);
+        let id = message.author.id;
+        if (Object.keys(timeouts).includes(id)) {
+            if (Date.now() - timeouts[id].time > 15 * 60 * 1000) { // Out of 15 minute range
+                timeouts[id] = { count: 1, time: Date.now() };
+                message.member?.timeout(15 * 1000, "URL Violation - First infraction"); // Timeout member for 15 seconds (first infraction)
+            } else { // Relative time is less than 15 minutes ago
+                timeouts[id].count += 1;
+                if (timeouts[id].count == 2) {
+                    message.member?.timeout(60 * 1000, "URL Violation - Second infraction"); // Timeout member for 60 seconds (first infraction)
+                } else {
+                    // 3 messages and relative time is less than 15 minutes ago
+                    message.member?.ban({ deleteMessageSeconds: 60 * 30, reason: "URL Violation - Third infaction" });
+                    delete timeouts[id];
+                }
+            }
+        } else {
+            timeouts[id] = { count: 1, time: Date.now() };
+            message.member?.timeout(15 * 1000, "URL Violation - First infraction"); // Timeout member for 15 seconds (first infraction)
+        }
         message.client.channels.fetch(config()["log_channel"]).then((channel) => {
             let embed = config()["whitelist_fail_embed"];
             embed.embeds[0].description += prettyFailed.join("\n");

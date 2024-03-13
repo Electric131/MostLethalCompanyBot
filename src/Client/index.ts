@@ -9,6 +9,7 @@ const rest = new discord.REST({ version: "10" }).setToken(process.env.TOKEN as s
 
 export default class Client extends discord.Client {
     commands: discord.Collection<string, Command>
+    bootTime: number   // Track when the bot started to time it's startup time
 
     constructor() {
         super({
@@ -16,6 +17,7 @@ export default class Client extends discord.Client {
         });
 
         this.commands = new discord.Collection();
+        this.bootTime = Date.now();
     }
 
     async start() {
