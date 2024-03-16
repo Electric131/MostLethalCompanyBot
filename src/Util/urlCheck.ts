@@ -39,12 +39,9 @@ export async function handleMessage(message: Message): Promise<boolean> {
         if (Object.keys(timeouts).includes(id)) {
             if (Date.now() - timeouts[id].time > 15 * 60 * 1000) { // Out of 15 minute range
                 timeouts[id] = { count: 1, time: Date.now() };
-                message.member?.timeout(15 * 1000, "URL Violation - First infraction"); // Timeout member for 15 seconds (first infraction)
             } else { // Relative time is less than 15 minutes ago
                 timeouts[id].count += 1;
-                if (timeouts[id].count == 2) {
-                    message.member?.timeout(60 * 1000, "URL Violation - Second infraction"); // Timeout member for 60 seconds (first infraction)
-                } else {
+                if (timeouts[id].count == 3) {
                     // 3 messages and relative time is less than 15 minutes ago
                     message.member?.ban({ deleteMessageSeconds: 60 * 30, reason: "URL Violation - Third infaction" });
                     delete timeouts[id];
@@ -52,7 +49,6 @@ export async function handleMessage(message: Message): Promise<boolean> {
             }
         } else {
             timeouts[id] = { count: 1, time: Date.now() };
-            message.member?.timeout(15 * 1000, "URL Violation - First infraction"); // Timeout member for 15 seconds (first infraction)
         }
         message.client.channels.fetch(config()["log_channel"]).then((channel) => {
             let embed = config()["whitelist_fail_embed"];
