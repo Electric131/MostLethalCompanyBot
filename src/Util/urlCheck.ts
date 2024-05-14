@@ -77,15 +77,13 @@ function checkURL(match: RegExpMatchArray): boolean {
             if (!parseInt(index)) continue; // Invalid number provided
             if (!match[parseInt(index)]) continue; // Index not in array
 
-            if (match[parseInt(index)] != whitelist[name][index]) { // Check if part is not equal
+            if (!match[parseInt(index)].match(whitelist[name][index])) { // Check if part does not match regex
                 valid = false;
                 break;
             }
         }
         // Check if all parts were valid
-        if (valid) {
-            return true
-        }
+        if (valid) return true;
     }
     return false;
 }

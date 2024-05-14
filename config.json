@@ -62,93 +62,94 @@
     },
     "whitelisted_urls": {
         "thunderstore": {
-            "3": "thunderstore",
-            "4": "io"
+            "3": "^thunderstore$",
+            "4": "^io$"
         },
         "twitch": {
-            "3": "twitch",
-            "4": "tv"
+            "3": "^twitch$",
+            "4": "^tv$"
         },
         "medal": {
-            "3": "medal",
-            "4": "tv"
+            "3": "^medal$",
+            "4": "^tv$"
         },
         "tenor": {
-            "3": "tenor",
-            "4": "com"
+            "3": "^tenor$",
+            "4": "^com$"
         },
         "reddit": {
-            "3": "reddit",
-            "4": "com"
+            "3": "^reddit$",
+            "4": "^com$"
         },
-        "discord-general": {
-            "3": "discord",
-            "4": "com"
+        "discord-channels": {
+            "3": "^discord$",
+            "4": "^com$",
+            "5": "^/channels/.*"
         },
         "youtube": {
-            "3": "youtube",
-            "4": "com"
+            "3": "^youtube$",
+            "4": "^com$"
         },
         "youtu.be": {
-            "3": "youtu",
-            "4": "be"
+            "3": "^youtu$",
+            "4": "^be$"
         },
         "google-docs": {
-            "3": "docs.google",
-            "4": "com"
+            "3": "^docs.google$",
+            "4": "^com$"
         },
         "google": {
-            "3": "google",
-            "4": "com"
+            "3": "^google$",
+            "4": "^com$"
         },
         "media-discord": {
-            "3": "media.discordapp",
-            "4": "com"
+            "3": "^media.discordapp$",
+            "4": "^com$"
         },
         "cdn-discord": {
-            "3": "cdn.discordapp",
-            "4": "com"
+            "3": "^cdn.discordapp$",
+            "4": "^com$"
         },
         "cfg-file": {
-            "4": "cfg"
+            "4": "^cfg$"
         },
         "zip-file": {
-            "4": "zip"
+            "4": "^zip$"
         },
         "md-file": {
-            "4": "md"
+            "4": "^md$"
         },
         "github": {
-            "3": "github",
-            "4": "com"
+            "3": "^github$",
+            "4": "^com$"
         },
         "wiki": {
-            "3": "clarkuk.gitbook",
-            "4": "io"
+            "3": "^clarkuk.gitbook$",
+            "4": "^io$"
         },
         "discord": {
-            "3": "discord",
-            "4": "gg",
-            "5": "/themostlethalcompany"
+            "3": "^discord$",
+            "4": "^gg$",
+            "5": "^/themostlethalcompany$"
         },
         "patreon": {
-            "3": "patreon",
-            "4": "com"
+            "3": "^patreon$",
+            "4": "^com$"
         },
         "paypal": {
-            "3": "paypal",
-            "4": "com",
-            "5": "/donate/?hosted_button_id=AAEGTBLWAWW3S"
+            "3": "^paypal$",
+            "4": "^com$",
+            "5": "^/donate/?hosted_button_id=AAEGTBLWAWW3S$"
         },
         "trello": {
-            "3": "trello",
-            "4": "com",
-            "5": "/b/C01TBe4O/themostlethalcompany"
+            "3": "^trello$",
+            "4": "^com$",
+            "5": "^/b/C01TBe4O/themostlethalcompany$"
         },
         "linktree": {
-            "3": "linktr",
-            "4": "ee",
-            "5": "/clarkuk"
+            "3": "^linktr$",
+            "4": "^ee$",
+            "5": "^/clarkuk$"
         }
     },
     "whitelist_fail_embed": {

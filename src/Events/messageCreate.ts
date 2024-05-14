@@ -28,7 +28,7 @@ export const event: Event = {
             }
         }
         // Message is in a guild, and member is not a moderator
-        if (message.content && message.inGuild() && !message.member?.roles?.cache.has(config().roles.moderator)) {
+        if (message.content && message.inGuild() && message.member?.roles?.cache.has(config().roles.moderator)) {
             await handleMessage(message)
         }
     }
